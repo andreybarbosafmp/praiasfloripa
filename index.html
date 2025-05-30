@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As melhores praias de Florianópolis - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #006d77;
+      --secondary: #83c5be;
+      --dark: #1e1e1e;
+      --light: #f8f9fa;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      transition: var(--transition);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    body.dark-mode {
+      background-color: var(--dark);
+      color: var(--light);
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+    
+    .intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      margin-bottom: 3rem;
+      transition: var(--transition);
+    }
+    
+    .video-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 109, 119, 0.3);
+      margin: 0.5rem;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 109, 119, 0.4);
+    }
+    
+    .btn i {
+      margin-left: 8px;
+    }
+    
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .theme-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border: none;
+      z-index: 100;
+      transition: var(--transition);
+    }
+    
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.05);
+      margin-top: auto;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .btn {
+        padding: 0.7rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>As melhores praias de Florianópolis</h1>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <p>Florianópolis é conhecida por suas praias paradisíacas que encantam visitantes do mundo todo. Das praias agitadas às mais tranquilas, a ilha oferece opções para todos os gostos.</p>
+    </div>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YmZDgaSDulA" 
+        title="Vídeo sobre praias de Florianópolis" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" onclick="window.location.href='pagina2.html'">
+        Explorar praias <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <footer>
+    <p>&copy; 2023 Praias de Florianópolis. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    
+    // Verificar preferência do usuário
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
